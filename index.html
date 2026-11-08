@@ -330,6 +330,90 @@
       display: block;
     }
 
+    /* Week Summary */
+    .week-summary {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(251, 191, 36, 0.1));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .week-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .week-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .week-badge {
+      font-size: 10px;
+      background: rgba(239, 68, 68, 0.2);
+      color: var(--accent-red);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 800;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .week-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .week-row {
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+
+    .week-row:hover {
+      background: rgba(56, 189, 248, 0.15);
+    }
+
+    .week-date {
+      font-weight: 800;
+      min-width: 85px;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .week-shops {
+      flex: 1;
+      color: #e2e8f0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 8px;
+    }
+
+    .week-arrow {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
     footer {
       text-align: center;
       font-size: 11px;
@@ -373,6 +457,46 @@
       </div>
     </div>
 
+    <!-- Direct Week Summary (検索不要で直近1週間の締切を一目瞭然) -->
+    <section class="week-summary">
+      <div class="week-header">
+        <div class="week-title">📅 直近1週間の締切スケジュール</div>
+        <span class="week-badge">検索なしで一目瞭然</span>
+      </div>
+      <div class="week-grid">
+        <a href="#sec-11-8" class="week-row">
+          <span class="week-date" style="color:#ef4444;">本日 11/8 (日)</span>
+          <span class="week-shops">竜星のPAO · 古本市場 · しまむら · TSUTAYA</span>
+          <span class="week-arrow">見る ↓</span>
+        </a>
+        <a href="#sec-11-9" class="week-row">
+          <span class="week-date" style="color:#fbbf24;">明日 11/9 (月)</span>
+          <span class="week-shops">⚡ セブンネット · ファミマオンライン (最優先!)</span>
+          <span class="week-arrow">見る ↓</span>
+        </a>
+        <a href="#sec-11-10" class="week-row">
+          <span class="week-date">11/10 (火)</span>
+          <span class="week-shops">⚡ ポケセン公式追加抽選 (16:59) · ヨドバシ開始</span>
+          <span class="week-arrow">見る ↓</span>
+        </a>
+        <a href="#sec-11-11" class="week-row">
+          <span class="week-date">11/11 (水)</span>
+          <span class="week-shops">晴れる屋2 通販 (18:00)</span>
+          <span class="week-arrow">見る ↓</span>
+        </a>
+        <a href="#sec-11-12" class="week-row">
+          <span class="week-date">11/12 (木)</span>
+          <span class="week-shops">⚡ イオン(キッズリパブリック 19:59) · GEO(17:59)</span>
+          <span class="week-arrow">見る ↓</span>
+        </a>
+        <a href="#sec-11-15" class="week-row">
+          <span class="week-date">11/15 (日)</span>
+          <span class="week-shops">⚡ ドン・キホーテ (majica 23:59)</span>
+          <span class="week-arrow">見る ↓</span>
+        </a>
+      </div>
+    </section>
+
     <!-- Filters -->
     <section class="filter-section">
       <input type="text" id="searchInput" class="search-box" placeholder="🔍 店舗名・商品名で絞り込み (例: セブン, ポケセン, ハドウシーカー)">
@@ -400,7 +524,7 @@
     <div id="lotteryList">
 
       <!-- 11/8 (本日締切) -->
-      <div class="date-section" data-date="11/8">
+      <div class="date-section" id="sec-11-8" data-date="11/8">
         <div class="date-header">
           <span class="date-title">締切：11月8日（日）</span>
           <span class="date-badge">本日締切</span>
@@ -487,7 +611,7 @@
       </div>
 
       <!-- 11/9 (明日締切) -->
-      <div class="date-section" data-date="11/9">
+      <div class="date-section" id="sec-11-9" data-date="11/9">
         <div class="date-header">
           <span class="date-title">締切：11月9日（月）</span>
           <span class="date-badge" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">明日締切</span>
@@ -538,7 +662,7 @@
       </div>
 
       <!-- 11/10 (明後日締切) -->
-      <div class="date-section" data-date="11/10">
+      <div class="date-section" id="sec-11-10" data-date="11/10">
         <div class="date-header">
           <span class="date-title">締切：11月10日（火）</span>
           <span class="date-count">公式本命</span>
@@ -585,7 +709,7 @@
       </div>
 
       <!-- 11/11 〜 11/12 -->
-      <div class="date-section" data-date="11/11-12">
+      <div class="date-section" id="sec-11-12" data-date="11/11-12">
         <div class="date-header">
           <span class="date-title">締切：11月11日（水）〜 12日（木）</span>
           <span class="date-count">受付中・予告</span>
@@ -650,7 +774,7 @@
       </div>
 
       <!-- 11/15 (日) -->
-      <div class="date-section" data-date="11/15">
+      <div class="date-section" id="sec-11-15" data-date="11/15">
         <div class="date-header">
           <span class="date-title">締切：11月15日（日）</span>
           <span class="date-count">週末締切</span>
