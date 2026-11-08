@@ -620,12 +620,16 @@
     let searchQuery = '';
 
     function filterCards() {
+      const q = searchQuery.toLowerCase();
       cards.forEach(card => {
-        const text = card.getAttribute('data-text').toLowerCase();
+        const dataText = (card.getAttribute('data-text') || '').toLowerCase();
+        const fullText = (card.innerText || '').toLowerCase();
+        const combinedText = dataText + ' ' + fullText;
+
         const region = card.getAttribute('data-region') || '';
         const status = card.getAttribute('data-status') || '';
 
-        const matchesSearch = text.includes(searchQuery.toLowerCase());
+        const matchesSearch = q === '' || combinedText.includes(q);
         const matchesRegion = currentRegion === 'all' || region.includes(currentRegion);
         const matchesStatus = currentStatus === 'all' || status === currentStatus;
 
