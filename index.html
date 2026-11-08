@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポケカ抽選応募リンク一覧 | ポケカナビ（速報まとめ）</title>
+  <meta name="description" content="ポケモンカードの最新抽選販売・予約情報を完全網羅！ポケモンセンター、セブンネット、ファミマ、家電量販店、トレカショップの応募リンクを締切日順にリアルタイム掲載。">
+  <style>
+    :root {
+      --bg-dark: #0a0f1d;
+      --card-bg: #131c31;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-gold: #fbbf24;
+      --accent-cyan: #38bdf8;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+    header {
+      background: rgba(10, 15, 29, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-icon {
+      font-size: 24px;
+    }
+
+    .brand-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #38bdf8, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-weight: 800;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 24px 0 16px 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Filters & Search */
+    .filter-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      margin-bottom: 12px;
+    }
+
+    .search-box:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    .filter-group-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .filter-pill {
+      font-size: 11px;
+      padding: 5px 11px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .filter-pill.active {
+      background: var(--accent-cyan);
+      color: #000;
+      font-weight: 800;
+      border-color: var(--accent-cyan);
+    }
+
+    /* Section Header */
+    .date-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 24px 0 12px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .date-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+
+    .date-badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: rgba(239, 68, 68, 0.2);
+      color: var(--accent-red);
+      font-weight: 800;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .date-count {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    /* Cards */
+    .lottery-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .lottery-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .shop-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .status-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .status-today {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .status-soon {
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .status-open {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .product-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 10px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px 12px;
+      font-size: 11px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-val {
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .apply-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .apply-btn:hover {
+      opacity: 0.9;
+    }
+
+    .apply-btn.x-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+    }
+
+    /* Ad Container */
+    .ad-container {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .ad-label {
+      font-size: 9px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🃏</span>
+        <div>
+          <div class="brand-title">ポケカナビ</div>
+        </div>
+      </a>
+      <span class="header-badge">リアルタイム速報</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <span class="hero-badge">2026年最新 · リアルタイム更新</span>
+      <h1 class="hero-title">ポケカ抽選応募リンク一覧</h1>
+      <p class="hero-desc">全国通販・大手量販店・ショップの抽選受付リンクを締切順に一括整理</p>
+    </section>
+
+    <!-- Top Banner Ad (A8: Warau) -->
+    <div class="ad-container">
+      <span class="ad-label">SPONSORED / ポイ活でポケカBOX代GET</span>
+      <div style="display:flex; justify-content:center; align-items:center;">
+        <!-- A8 Warau 320x50 Banner -->
+        <a href="https://px.a8.net/svt/ejp?a8mat=450U8N+8GTYCY+50+2HKN5D" rel="nofollow">
+        <img border="0" width="320" height="50" alt="ポイ活ならワラウ" src="https://www27.a8.net/svt/bgt?aid=241108250512&wid=001&eno=01&mid=s00000000018015029000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=450U8N+8GTYCY+50+2HKN5D" alt="">
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <section class="filter-section">
+      <input type="text" id="searchInput" class="search-box" placeholder="🔍 店舗名・商品名で絞り込み (例: セブン, ポケセン, ハドウシーカー)">
+      
+      <div class="filter-group-label">地域・オンライン</div>
+      <div class="filter-pills" id="regionFilters">
+        <span class="filter-pill active" data-filter="all">すべて</span>
+        <span class="filter-pill" data-filter="online">全国オンライン</span>
+        <span class="filter-pill" data-filter="tokyo">東京</span>
+        <span class="filter-pill" data-filter="chiba">千葉</span>
+        <span class="filter-pill" data-filter="saitama">埼玉</span>
+        <span class="filter-pill" data-filter="kanagawa">神奈川</span>
+      </div>
+
+      <div class="filter-group-label">ステータス</div>
+      <div class="filter-pills" id="statusFilters">
+        <span class="filter-pill active" data-status="all">すべて</span>
+        <span class="filter-pill" data-status="today">🔥 本日締切</span>
+        <span class="filter-pill" data-status="soon">⚠️ 締切間近</span>
+        <span class="filter-pill" data-status="open">受付中</span>
+      </div>
+    </section>
+
+    <!-- List of Lotteries -->
+    <div id="lotteryList">
+
+      <!-- 11/8 (本日締切) -->
+      <div class="date-section" data-date="11/8">
+        <div class="date-header">
+          <span class="date-title">締切：11月8日（日）</span>
+          <span class="date-badge">本日締切</span>
+          <span class="date-count">本日最終受付</span>
+        </div>
+
+        <!-- しまむらパーク -->
+        <article class="lottery-card" data-region="online" data-status="today" data-text="しまむらパーク 30th celebration box 全国オンライン アプリ">
+          <div class="card-top">
+            <div class="shop-name">しまむらパーク</div>
+            <span class="status-badge status-today">23:00 締切</span>
+          </div>
+          <div class="product-title">📦 30th CELEBRATION BOX</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国オンライン</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">公式アプリ</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">通販発送</span></div>
+            <div><span class="info-label">発表:</span> <span class="info-val">11/9（月）</span></div>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px;">
+            ※しまむらパークアプリの会員特典から応募。
+          </div>
+          <a href="https://www.shimamura.gr.jp/shimamura/sp/app/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            📱 しまむら公式アプリを開く
+          </a>
+        </article>
+
+        <!-- 古本市場 -->
+        <article class="lottery-card" data-region="all online tokyo chiba saitama kanagawa" data-status="today" data-text="古本市場 ふるいち スペシャルデッキセットmega メガオーダイル メガカイリュー メガゲンガー 全国 webフォーム">
+          <div class="card-top">
+            <div class="shop-name">古本市場（ふるいち全国店舗）</div>
+            <span class="status-badge status-today">23:00 締切</span>
+          </div>
+          <div class="product-title">📦 スペシャルデッキセットMEGA（メガオーダイル等）</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国店舗</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">Webフォーム</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">店頭購入</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">アプリ会員番号</span></div>
+          </div>
+          <a href="https://www.furu1.net" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式ページから応募する
+          </a>
+        </article>
+
+        <!-- TSUTAYA 北千住 -->
+        <article class="lottery-card" data-region="tokyo" data-status="today" data-text="tsutaya 北千住 30th celebration プレミアムデッキセット エーフィ ブラッキー 東京 xリポスト">
+          <div class="card-top">
+            <div class="shop-name">TSUTAYA 北千住</div>
+            <span class="status-badge status-today">23:59 締切</span>
+          </div>
+          <div class="product-title">📦 30th プレミアムデッキセット（エーフィ・ブラッキー）</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">東京（北千住）</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">Xリポスト</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">店頭購入</span></div>
+            <div><span class="info-label">発表:</span> <span class="info-val">当選者にDM</span></div>
+          </div>
+          <a href="https://x.com/search?q=TSUTAYA%20北千住%20ポケカ" target="_blank" rel="noopener noreferrer" class="apply-btn x-btn">
+            𝕏 店舗公式Xで応募する
+          </a>
+        </article>
+      </div>
+
+      <!-- 11/9 (明日締切) -->
+      <div class="date-section" data-date="11/9">
+        <div class="date-header">
+          <span class="date-title">締切：11月9日（月）</span>
+          <span class="date-badge" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">明日締切</span>
+          <span class="date-count">最優先の狙い目！</span>
+        </div>
+
+        <!-- セブンネット -->
+        <article class="lottery-card" data-region="online" data-status="soon" data-text="セブンネットショッピング 拡張パック ハドウシーカー 全国オンライン webフォーム セブンイレブン受取">
+          <div class="card-top">
+            <div class="shop-name">セブンネットショッピング</div>
+            <span class="status-badge status-soon">明日 23:59 締切</span>
+          </div>
+          <div class="product-title">⚡ 拡張パック「ハドウシーカー」BOX</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国オンライン</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">Web応募</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">セブン店頭受取</span></div>
+            <div><span class="info-label">発表:</span> <span class="info-val">11/27（金）メール</span></div>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px;">
+            ※過去1年間にセブンネットで税抜1円以上購入した方対象。
+          </div>
+          <a href="https://7net.omni7.jp" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 セブンネット応募ページを開く
+          </a>
+        </article>
+
+        <!-- ファミマオンライン -->
+        <article class="lottery-card" data-region="online" data-status="soon" data-text="ファミマオンライン 拡張パック ハドウシーカー 全国オンライン webフォーム ファミマ受取">
+          <div class="card-top">
+            <div class="shop-name">ファミマオンライン</div>
+            <span class="status-badge status-soon">明日 23:59 締切</span>
+          </div>
+          <div class="product-title">⚡ 拡張パック「ハドウシーカー」BOX</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国オンライン</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">Web応募</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">ファミマ店頭受取</span></div>
+            <div><span class="info-label">発表:</span> <span class="info-val">11/11（水）</span></div>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px;">
+            ※ファミマオンライン会員登録（メルマガ登録）が必要です。
+          </div>
+          <a href="https://famima-online.family.co.jp" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 ファミマ応募ページを開く
+          </a>
+        </article>
+      </div>
+
+      <!-- 11/10 (明後日締切) -->
+      <div class="date-section" data-date="11/10">
+        <div class="date-header">
+          <span class="date-title">締切：11月10日（火）</span>
+          <span class="date-count">公式本命</span>
+        </div>
+
+        <!-- ポケモンセンターオンライン -->
+        <article class="lottery-card" data-region="online" data-status="open" data-text="ポケモンセンターオンライン 公式 ポケセン 拡張パック ハドウシーカー 全国オンライン 自宅配送 追加抽選">
+          <div class="card-top">
+            <div class="shop-name">ポケモンセンターオンライン（公式）</div>
+            <span class="status-badge status-soon">11/10 16:59 締切</span>
+          </div>
+          <div class="product-title">⚡ 拡張パック「ハドウシーカー」追加抽選</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国オンライン</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">公式Web応募</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">自宅配送</span></div>
+            <div><span class="info-label">発表:</span> <span class="info-val">11/17（火）15:00</span></div>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px;">
+            ※公式追加抽選枠！本人認証済み枠と一般枠あり。
+          </div>
+          <a href="https://www.pokemoncenter-online.com" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 ポケセン公式応募ページを開く
+          </a>
+        </article>
+      </div>
+
+      <!-- 11/11 〜 11/12 -->
+      <div class="date-section" data-date="11/11-12">
+        <div class="date-header">
+          <span class="date-title">締切：11月11日（水）〜 12日（木）</span>
+          <span class="date-count">受付中・予告</span>
+        </div>
+
+        <!-- 晴れる屋2 -->
+        <article class="lottery-card" data-region="online" data-status="open" data-text="晴れる屋2 通販 拡張パック ハドウシーカー 全国オンライン livepocket クレジットカード">
+          <div class="card-top">
+            <div class="shop-name">晴れる屋2（通販店）</div>
+            <span class="status-badge status-open">11/11 18:00 締切</span>
+          </div>
+          <div class="product-title">⚡ 拡張パック「ハドウシーカー」BOX</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国オンライン</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">LivePocket</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">通販発送</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">LINE会員登録</span></div>
+          </div>
+          <a href="https://www.hareruya2.com" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 晴れる屋2公式案内を開く
+          </a>
+        </article>
+
+        <!-- ゲオ -->
+        <article class="lottery-card" data-region="online all" data-status="open" data-text="geo ゲオ 30th celebration box 拡張パック ハドウシーカー 全国 アプリ 店頭受取">
+          <div class="card-top">
+            <div class="shop-name">GEO（ゲオ）</div>
+            <span class="status-badge status-open">11/12 17:59 締切</span>
+          </div>
+          <div class="product-title">📦 30th BOX & ハドウシーカー</div>
+          <div class="info-grid">
+            <div><span class="info-label">期間:</span> <span class="info-val">11/9 11:00 〜 11/12</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">GEOアプリ</span></div>
+            <div><span class="info-label">受取:</span> <span class="info-val">通販 / 店舗受取</span></div>
+            <div><span class="info-label">対象:</span> <span class="info-val">全国</span></div>
+          </div>
+          <a href="https://geo-online.co.jp/store_info/service/geoappli.html" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            📱 ゲオ公式アプリを準備する
+          </a>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- AdMax In-feed Impression Ad -->
+    <div class="ad-container" style="margin: 32px 0;">
+      <span class="ad-label">SPONSORED / インプレッション広告</span>
+      <div style="display:flex; justify-content:center; align-items:center; min-height:100px;">
+        <!-- admax -->
+        <script src="https://adm.shinobi.jp/s/e95b06bd6b69ee0b778825791b1acd78"></script>
+        <!-- admax -->
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 ポケカナビ All Rights Reserved.
+    </footer>
+
+  </main>
+
+  <!-- Interactive Filter Script -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const regionPills = document.querySelectorAll('#regionFilters .filter-pill');
+    const statusPills = document.querySelectorAll('#statusFilters .filter-pill');
+    const cards = document.querySelectorAll('.lottery-card');
+    const dateSections = document.querySelectorAll('.date-section');
+
+    let currentRegion = 'all';
+    let currentStatus = 'all';
+    let searchQuery = '';
+
+    function filterCards() {
+      cards.forEach(card => {
+        const text = card.getAttribute('data-text').toLowerCase();
+        const region = card.getAttribute('data-region') || '';
+        const status = card.getAttribute('data-status') || '';
+
+        const matchesSearch = text.includes(searchQuery.toLowerCase());
+        const matchesRegion = currentRegion === 'all' || region.includes(currentRegion);
+        const matchesStatus = currentStatus === 'all' || status === currentStatus;
+
+        if (matchesSearch && matchesRegion && matchesStatus) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Hide empty date sections
+      dateSections.forEach(section => {
+        let hasVisible = false;
+        section.querySelectorAll('.lottery-card').forEach(c => {
+          if (c.style.display !== 'none') hasVisible = true;
+        });
+        section.style.display = hasVisible ? 'block' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      filterCards();
+    });
+
+    regionPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        regionPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentRegion = pill.getAttribute('data-filter');
+        filterCards();
+      });
+    });
+
+    statusPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        statusPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentStatus = pill.getAttribute('data-status');
+        filterCards();
+      });
+    });
+  </script>
+
+</body>
+</html>
