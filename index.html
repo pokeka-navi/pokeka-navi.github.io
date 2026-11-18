@@ -666,7 +666,7 @@
     </div>
 
     <!-- Direct Week Summary -->
-    <section class="week-summary">
+    <section class="week-summary" id="weekSummary">
       <div class="week-header">
         <div class="week-title">📅 直近1週間の締切スケジュール</div>
       </div>
@@ -14715,6 +14715,14 @@
           }
         }
       });
+
+      // 絞り込みで週間スケジュールの行が全部消えたら、カードごと隠す（空の白カードを残さない）
+      let weekVisible = false;
+      Object.keys(weekRows).forEach(function (k) {
+        if (weekRows[k].row.style.display !== 'none') weekVisible = true;
+      });
+      const weekSummary = document.getElementById('weekSummary');
+      if (weekSummary) weekSummary.style.display = weekVisible ? '' : 'none';
 
       listMeta.textContent = '表示中 ' + shown + '件（全' + TOTAL + '件）';
       emptyState.style.display = shown === 0 ? 'block' : 'none';
