@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポケカナビ | ポケカ・ワンピ・遊戯王・TCG最新抽選応募リンク速報まとめ一覧</title>
-  <meta name="description" content="ポケモンカード・ワンピースカード・遊戯王OCG・TCGの最新抽選販売・予約情報を完全網羅！LivePocket・公式・家電量販店・ショップの応募リンクを締切日順にリアルタイム掲載。">
-  <meta name="keywords" content="ポケカ抽選,ワンピースカード予約,遊戯王抽選,TCG抽選,ハドウシーカー,ポケカナビ,LivePocket">
+  <title>ポケカナビ | ポケカ・ワンピ・遊戯王・ドラゴンボール・TCG最新抽選応募リンク速報まとめ一覧</title>
+  <meta name="description" content="ポケモンカード・ワンピースカード・遊戯王OCG・ドラゴンボールフュージョンワールド・TCGの最新抽選販売・予約情報を完全網羅！LivePocket・公式・家電量販店・ショップの応募リンクを締切日順にリアルタイム掲載。">
+  <meta name="keywords" content="ポケカ抽選,ワンピースカード予約,遊戯王抽選,ドラゴンボールカード抽選,フュージョンワールド,TCG抽選,ハドウシーカー,ポケカナビ,LivePocket">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="sVI1GOg4cQMqHlO1eDTc6qngZ6FfMN494CDo5JnYznw">
   <link rel="canonical" href="https://pokeka-navi.github.io/">
@@ -14,13 +14,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pokeka-navi.github.io/">
   <meta property="og:site_name" content="ポケカナビ">
-  <meta property="og:title" content="ポケカナビ | ポケカ・ワンピ・遊戯王・TCG最新抽選応募リンク速報まとめ一覧">
-  <meta property="og:description" content="ポケモンカード・ワンピースカード・遊戯王の最新抽選販売情報を完全網羅！締切日順にリアルタイム掲載。">
+  <meta property="og:title" content="ポケカナビ | ポケカ・ワンピ・遊戯王・ドラゴンボール・TCG最新抽選応募リンク速報まとめ一覧">
+  <meta property="og:description" content="ポケモンカード・ワンピースカード・遊戯王・ドラゴンボールの最新抽選販売情報を完全網羅！締切日順にリアルタイム掲載。">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ポケカナビ | ポケカ・ワンピ・遊戯王・TCG最新抽選応募リンク速報まとめ一覧">
-  <meta name="twitter:description" content="ポケモンカード・ワンピースカード・遊戯王の最新抽選販売情報を完全網羅！締切日順にリアルタイム掲載。">
+  <meta name="twitter:title" content="ポケカナビ | ポケカ・ワンピ・遊戯王・ドラゴンボール・TCG最新抽選応募リンク速報まとめ一覧">
+  <meta name="twitter:description" content="ポケモンカード・ワンピースカード・遊戯王・ドラゴンボールの最新抽選販売情報を完全網羅！締切日順にリアルタイム掲載。">
 
   <!-- 構造化データ (JSON-LD) -->
   <script type="application/ld+json">
@@ -241,7 +241,7 @@
       flex: 0 0 auto;
     }
 
-    /* Genre / Category Tabs（スマホ幅390pxでは2列+「すべて」全幅で文字切れなし） */
+    /* Genre / Category Tabs（スマホ390px: 「すべて」「その他」全幅＋間は2列で文字切れなし / 520px以上: 3列×2行） */
     .category-tabs {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -249,7 +249,8 @@
       margin-bottom: 16px;
     }
 
-    .cat-tab[data-cat="all"] {
+    .cat-tab[data-cat="all"],
+    .cat-tab[data-cat="other"] {
       grid-column: 1 / -1;
     }
 
@@ -307,13 +308,22 @@
       box-shadow: 0 2px 8px rgba(30, 27, 75, 0.28);
     }
 
-    /* 横幅のある画面では5タブを1列に並べる（基本の .cat-tab 定義より後に置くこと） */
+    /* ドラゴンボール：ポケカのアンバー(#f59e0b)と見分けやすいオレンジ */
+    .cat-tab.cat-dragonball.active {
+      background: #ea580c;
+      border-color: #ea580c;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.28);
+    }
+
+    /* 520px以上では6タブを3列×2行に整列（基本の .cat-tab 定義より後に置くこと） */
     @media (min-width: 520px) {
       .category-tabs {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .cat-tab[data-cat="all"] {
+      .cat-tab[data-cat="all"],
+      .cat-tab[data-cat="other"] {
         grid-column: auto;
       }
 
@@ -495,6 +505,12 @@
       border: 1px solid #c7d2fe;
     }
 
+    .badge-dragonball {
+      background: #ffedd5;
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+    }
+
     .shop-name {
       font-size: 14px;
       font-weight: 800;
@@ -598,7 +614,7 @@
     <section class="hero">
       <span class="hero-badge">2026年最新 · 毎週水曜・日曜更新</span>
       <h1 class="hero-title">トレカ抽選応募リンク速報</h1>
-      <p class="hero-desc">ポケカ・ワンピース・遊戯王・TCGの全国抽選受付リンクを締切順に一括整理</p>
+      <p class="hero-desc">ポケカ・ワンピース・遊戯王・ドラゴンボール・TCGの全国抽選受付リンクを締切順に一括整理</p>
     </section>
 
     <!-- Genre Category Tabs -->
@@ -607,6 +623,7 @@
       <button class="cat-tab cat-pokeka" data-cat="pokeka">⚡ ポケモンカード</button>
       <button class="cat-tab cat-onepiece" data-cat="onepiece">🏴‍☠️ ワンピースカード</button>
       <button class="cat-tab cat-yugioh" data-cat="yugioh">⚔️ 遊戯王</button>
+      <button class="cat-tab cat-dragonball" data-cat="dragonball">🐉 ドラゴンボール</button>
       <button class="cat-tab cat-other" data-cat="other">🃏 その他TCG</button>
     </div>
 
@@ -624,13 +641,13 @@
         </a>
         <a href="#sec-11-19" class="week-row">
           <span class="week-date">11月19日（木）</span>
-          <span class="week-shops">ファミーズ ブックワン · TC バトロコ本厚木駅前 · MINTGAMES広島店 他137件</span>
-          <span class="week-count">140件</span>
+          <span class="week-shops">ファミーズ ブックワン · TC バトロコ本厚木駅前 · MINTGAMES広島店 他139件</span>
+          <span class="week-count">142件</span>
         </a>
         <a href="#sec-11-20" class="week-row">
           <span class="week-date">11月20日（金）</span>
-          <span class="week-shops">北国書林辰口店 · ブックオフ大宮ラクーン店 · BOOKOFFイオン山形北店 他43件</span>
-          <span class="week-count">46件</span>
+          <span class="week-shops">北国書林辰口店 · ブックオフ大宮ラクーン店 · BOOKOFFイオン山形北店 他45件</span>
+          <span class="week-count">48件</span>
         </a>
         <a href="#sec-11-21" class="week-row">
           <span class="week-date">11月21日（土）</span>
@@ -639,13 +656,13 @@
         </a>
         <a href="#sec-11-22" class="week-row">
           <span class="week-date">11月22日（日）</span>
-          <span class="week-shops">萬屋七重浜店 · カードラボAKIHABARAゲーマーズB1店 · CARDBOX宇和島店 他147件</span>
-          <span class="week-count">150件</span>
+          <span class="week-shops">萬屋七重浜店 · カードラボAKIHABARAゲーマーズB1店 · CARDBOX宇和島店 他158件</span>
+          <span class="week-count">161件</span>
         </a>
         <a href="#sec-11-23" class="week-row">
           <span class="week-date">11月23日（月）</span>
-          <span class="week-shops">HOBBY ONE ホビーワン · トレカおじい · 【トレカ】ブックオフ イトーヨーカドー溝ノ口店 他40件</span>
-          <span class="week-count">43件</span>
+          <span class="week-shops">HOBBY ONE ホビーワン · トレカおじい · 【トレカ】ブックオフ イトーヨーカドー溝ノ口店 他43件</span>
+          <span class="week-count">46件</span>
         </a>
         <a href="#sec-11-24" class="week-row">
           <span class="week-date">11月24日（火）</span>
@@ -673,7 +690,7 @@
 
     <!-- 掲載件数 -->
     <div class="list-meta">
-      <span id="listMeta">表示中 722件</span>
+      <span id="listMeta">表示中 740件</span>
       <span class="list-note">受付中の全案件を締切順に掲載</span>
     </div>
 
@@ -3228,10 +3245,10 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
-        <article class="lottery-card" data-category="other" data-deadline="2026-11-18T23:59:00+09:00" data-region="online" data-status="open" data-text="イオンスタイルオンライン ドラゴンボールスーパーカードゲーム フュージョンワールド ブースターパック reach the god【fb12】 全国 web web抽選受付（当選者にはオンライン販売） イオンスタイルオンライン会員のみ応募できます。支払いはイオンカードのみで、応募者と注文者は同一名義であることが必要です。24パックセットで、税込5,755円です。お一人さま1回限りです。受付期間は11/24(火)12:00から11/25(水)23:59までです。発送は12/12(土)以降に順次行います。店頭での購入はできません。boxでのお届けは保証されていません。 🃏 ドラゴンボール ドラゴンボール">
+        <article class="lottery-card" data-category="dragonball" data-deadline="2026-11-18T23:59:00+09:00" data-region="online" data-status="open" data-text="イオンスタイルオンライン ドラゴンボールスーパーカードゲーム フュージョンワールド ブースターパック reach the god【fb12】 全国 web web抽選受付（当選者にはオンライン販売） イオンスタイルオンライン会員のみ応募できます。支払いはイオンカードのみで、応募者と注文者は同一名義であることが必要です。24パックセットで、税込5,755円です。お一人さま1回限りです。受付期間は11/24(火)12:00から11/25(水)23:59までです。発送は12/12(土)以降に順次行います。店頭での購入はできません。boxでのお届けは保証されていません。 🐉 ドラゴンボール ドラゴンボール">
           <div class="card-top">
             <div class="shop-name-wrap">
-              <span class="cat-badge badge-other">🃏 ドラゴンボール</span>
+              <span class="cat-badge badge-dragonball">🐉 ドラゴンボール</span>
               <span class="shop-name">イオンスタイルオンライン</span>
             </div>
             <span class="status-badge status-today">11/18(水)23:59 締切</span>
@@ -3412,7 +3429,7 @@
       <div class="date-section" id="sec-11-19" data-date="11/19">
         <div class="date-header">
           <span class="date-title">締切：11月19日（木）</span>
-          <span class="date-count">140件</span>
+          <span class="date-count">142件</span>
         </div>
         
         <article class="lottery-card" data-category="onepiece" data-deadline="2026-11-19T12:00:00+09:00" data-region="online" data-status="open" data-text="ファミーズ ブックワン ワンピースカードゲーム ブースターパック 神の支配 (op-18) box 全国 x x で応募（フォロー＆リポスト等） 当店アカウントをフォロー＋投稿リポスト。店頭で現金購入できる方のみ。マイナンバーカード持参。1人1boxまで。譲渡・代理購入不可 🏴‍☠️ ワンピ ワンピース">
@@ -5935,11 +5952,47 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
+        <article class="lottery-card" data-category="onepiece" data-deadline="2026-11-19T23:59:00+09:00" data-region="kanagawa" data-status="open" data-text="ブックオフ イオン橋本店 onepieceカードゲーム ブースターパック 神の支配【op-18】 神奈川 x x で応募（フォロー＆リポスト等） ブックオフ公式アプリでイオン橋本店の10月分ポイント履歴が必要・@bo_hashimototcgをフォロー＋当ポストをリポスト・1人1box・店頭販売のみ 🏴‍☠️ ワンピ ワンピース">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-onepiece">🏴‍☠️ ワンピ</span>
+              <span class="shop-name">ブックオフ イオン橋本店</span>
+            </div>
+            <span class="status-badge status-open">11/19(木) 締切</span>
+          </div>
+          <div class="product-title">ONEPIECEカードゲーム ブースターパック 神の支配【OP-18】</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">神奈川 (X で応募（フォロー＆リポスト等）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">X</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">ブックオフ公式アプリでイオン橋本店の10月分ポイント履歴が必要・@bo_hash</span></div>
+          </div>
+          <a href="https://x.com/bo_hashimotoTCG/status/2122861847087124892" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="onepiece" data-deadline="2026-11-19T23:59:00+09:00" data-region="other_region" data-status="open" data-text="ふるいちイオンモール高の原店 ワンピースカードゲーム op-17 世界最強の戦士 京都 web web抽選（店頭掲示の二次元コードから応募） livepocket会員登録必須・本人のみ購入可(代理不可)・顔写真付き本人確認証必須・商品代金は店頭で支払い 🏴‍☠️ ワンピ ワンピース">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-onepiece">🏴‍☠️ ワンピ</span>
+              <span class="shop-name">ふるいちイオンモール高の原店</span>
+            </div>
+            <span class="status-badge status-open">11/19(木) 締切</span>
+          </div>
+          <div class="product-title">ワンピースカードゲーム OP-17 世界最強の戦士</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">京都 (WEB抽選（店頭掲示の二次元コードから応募）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">Livepocket会員登録必須・本人のみ購入可(代理不可)・顔写真付き本人確認</span></div>
+          </div>
+          <a href="https://x.com/furu1_AMt_hara/status/2122872421036241387" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
       </div>
       <div class="date-section" id="sec-11-20" data-date="11/20">
         <div class="date-header">
           <span class="date-title">締切：11月20日（金）</span>
-          <span class="date-count">46件</span>
+          <span class="date-count">48件</span>
         </div>
         
         <article class="lottery-card" data-category="onepiece" data-deadline="2026-11-20T00:00:00+09:00" data-region="online" data-status="open" data-text="北国書林辰口店 ワンピースカードゲーム 世界最強の戦士 1box / ヒロインズエディションvol.2 1box 石川 web web抽選受付 いずれか1boxのみ・1人1口・店頭で顔写真付き本人確認書類必須・取り置きは11月23日(月)営業終了時まで・代理購入不可 🏴‍☠️ ワンピ ワンピース">
@@ -6770,6 +6823,42 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
+        <article class="lottery-card" data-category="onepiece" data-deadline="2026-11-20T23:59:00+09:00" data-region="online" data-status="open" data-text="ジョーシン（店頭） one pieceカードゲーム ブースターパック 神の支配【op-18】 全国 店頭 店頭抽選受付（当選者には店頭販売） 応募した店舗が受取店舗で、joshinの店舗のレジで受け付けます。受付期間内にジョーシンアプリで配布される抽選応募クーポンが必要です。購入できるのは11/21(土)から11/23(月)までです。実施する店舗は一部に限られ、時間も店舗ごとに異なることがあります。詳しくは店頭の掲示で確認してください。 🏴‍☠️ ワンピ ワンピース">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-onepiece">🏴‍☠️ ワンピ</span>
+              <span class="shop-name">ジョーシン（店頭）</span>
+            </div>
+            <span class="status-badge status-open">11/20(金) 締切</span>
+          </div>
+          <div class="product-title">ONE PIECEカードゲーム ブースターパック 神の支配【OP-18】</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (店頭抽選受付（当選者には店頭販売）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">店頭</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">応募した店舗が受取店舗で、Joshinの店舗のレジで受け付けます。受付期間内にジ</span></div>
+          </div>
+          <a href="https://shop.joshin.co.jp/app/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-20T23:59:00+09:00" data-region="online" data-status="open" data-text="カードスタジアム首里店 ポケモンカードゲーム 拡張パック『ハドウシーカー』 抽選受付 沖縄 web web抽選受付（当選者には店頭販売） 本人確認書類が必要／受け取りは店頭のみ ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">カードスタジアム首里店</span>
+            </div>
+            <span class="status-badge status-open">11/20(金)23:59 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム 拡張パック『ハドウシーカー』 抽選受付</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">沖縄 (WEB抽選受付（当選者には店頭販売）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">本人確認書類が必要／受け取りは店頭のみ</span></div>
+          </div>
+          <a href="https://livepocket.jp/e/0qo3w" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
       </div>
       <div class="date-section" id="sec-11-21" data-date="11/21">
         <div class="date-header">
@@ -6867,10 +6956,10 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
-        <article class="lottery-card" data-category="other" data-deadline="2026-11-21T23:59:00+09:00" data-region="other_region" data-status="open" data-text="ブックオフ宮の沢店 ドラゴンボールフュージョンワールド「reach the god」 北海道 店頭 店頭抽選 2026年11月14日までに作成された当店ポイントカード必須・本人確認証必要・おひとり様1box・複数応募は無効・代理受取不可 🃏 ドラゴンボール ドラゴンボール">
+        <article class="lottery-card" data-category="dragonball" data-deadline="2026-11-21T23:59:00+09:00" data-region="other_region" data-status="open" data-text="ブックオフ宮の沢店 ドラゴンボールフュージョンワールド「reach the god」 北海道 店頭 店頭抽選 2026年11月14日までに作成された当店ポイントカード必須・本人確認証必要・おひとり様1box・複数応募は無効・代理受取不可 🐉 ドラゴンボール ドラゴンボール">
           <div class="card-top">
             <div class="shop-name-wrap">
-              <span class="cat-badge badge-other">🃏 ドラゴンボール</span>
+              <span class="cat-badge badge-dragonball">🐉 ドラゴンボール</span>
               <span class="shop-name">ブックオフ宮の沢店</span>
             </div>
             <span class="status-badge status-open">11/21(土) 締切</span>
@@ -6925,7 +7014,7 @@
       <div class="date-section" id="sec-11-22" data-date="11/22">
         <div class="date-header">
           <span class="date-title">締切：11月22日（日）</span>
-          <span class="date-count">150件</span>
+          <span class="date-count">161件</span>
         </div>
         
         <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T17:00:00+09:00" data-region="online" data-status="open" data-text="萬屋七重浜店 ポケモンカードゲーム mega 拡張パック ハドウシーカー 北海道 web web抽選受付 直近2ヶ月で当店開催の公認大会に参加した方のみ・dm受信設定とアカウントフォロー必須・シュリンクを外して販売 ⚡ ポケカ ポケカ">
@@ -7195,6 +7284,24 @@
             <div><span class="info-label">条件:</span> <span class="info-val">受け取りは店頭のみ</span></div>
           </div>
           <a href="https://livepocket.jp/e/dhya0" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T20:59:00+09:00" data-region="saitama" data-status="open" data-text="duel stade ganryu入間店 ポケモンカードゲーム mega 拡張パック ハドウシーカー 埼玉 店頭 店頭抽選 お1人様1回・1boxのみ、6,000円(税込)。店頭掲示の二次元コードから応募。重複応募は無効 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">Duel Stade Ganryu入間店</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)20:59 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA 拡張パック ハドウシーカー</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">埼玉 (店頭抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">店頭</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">お1人様1回・1BOXのみ、6,000円(税込)。店頭掲示の二次元コードから応募</span></div>
+          </div>
+          <a href="https://x.com/ganryu_iruma/status/2122856060419502329" target="_blank" rel="noopener noreferrer" class="apply-btn">
             🔗 公式案内・応募ページを開く
           </a>
         </article>
@@ -7612,6 +7719,42 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク 【box】ポケモンカードゲーム mega 拡張パック 30th celebration 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">しまむらパーク</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">【BOX】ポケモンカードゲーム MEGA 拡張パック 30th CELEBRATION</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (アプリ抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">アプリ</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
+          </div>
+          <a href="https://www.shop-shimamura.com/item/0363100014357/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク 【box】ポケモンカードゲーム mega 拡張パック ストームエメラルダ(m6) 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">しまむらパーク</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">【BOX】ポケモンカードゲーム MEGA 拡張パック ストームエメラルダ(M6)</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (アプリ抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">アプリ</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
+          </div>
+          <a href="https://www.shop-shimamura.com/item/0363100014200/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
         <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク ポケモンカードゲーム mega 30th カードセット サルノリ・ヒバニー・メッソン 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
           <div class="card-top">
             <div class="shop-name-wrap">
@@ -7648,6 +7791,24 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
+        <article class="lottery-card" data-category="onepiece" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク one pieceカードゲーム ブースターパック 世界最強の戦士【op-17】（特典付き） 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 🏴‍☠️ ワンピ ワンピース">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-onepiece">🏴‍☠️ ワンピ</span>
+              <span class="shop-name">しまむらパーク</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ONE PIECEカードゲーム ブースターパック 世界最強の戦士【OP-17】（特典付き）</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (アプリ抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">アプリ</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
+          </div>
+          <a href="https://www.shop-shimamura.com/item/0363100014314/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
         <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク ポケモンカードゲーム mega 30th カードセット ツタージャ・ポカブ・ミジュマル 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
           <div class="card-top">
             <div class="shop-name-wrap">
@@ -7663,6 +7824,60 @@
             <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
           </div>
           <a href="https://www.shop-shimamura.com/item/0363100014450/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク ポケモンカードゲーム mega スターターセットex ゾロア＆ゾロアークex 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">しまむらパーク</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA スターターセットex ゾロア＆ゾロアークex</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (アプリ抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">アプリ</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
+          </div>
+          <a href="https://www.shop-shimamura.com/item/0363100014199/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク ポケモンカードゲーム mega スターターセットex イーブイex 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">しまむらパーク</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA スターターセットex イーブイex</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (アプリ抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">アプリ</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
+          </div>
+          <a href="https://www.shop-shimamura.com/item/0363100014198/" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="しまむらパーク ポケモンカードゲーム mega スターターセットex ニャオハ＆マスカーニャex 全国 アプリ アプリ抽選 しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・当選したら通販で注文・配送 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">しまむらパーク</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA スターターセットex ニャオハ＆マスカーニャex</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">全国 (アプリ抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">アプリ</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">しまむらグループの公式アプリ会員（アプリの会員証から応募）・お1人さま1点限り・</span></div>
+          </div>
+          <a href="https://www.shop-shimamura.com/item/0363100014197/" target="_blank" rel="noopener noreferrer" class="apply-btn">
             🔗 公式案内・応募ページを開く
           </a>
         </article>
@@ -7933,6 +8148,78 @@
             <div><span class="info-label">条件:</span> <span class="info-val">WEB抽選の当選者に限り販売。発売日は2026年11月27日(金)</span></div>
           </div>
           <a href="https://furu1.net/news/news_information/pkop20261127sl/pkuaf.html?t=39930629034342" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="ふるいちイオンモール高崎店 ポケモンカードゲーム mega 拡張パック ハドウシーカー / union arena ブースターパック〈物語〉シリーズ vol.2【ex18bt】 / union arena ブースターパック d.gray-man【ua58bt】 群馬 web web抽選（応募ページは店の投稿・画像から） web抽選の当選者に限り販売（qrコードから申込） ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">ふるいちイオンモール高崎店</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA 拡張パック ハドウシーカー / UNION ARENA ブースターパック〈物語〉シリーズ Vol.2【EX18BT】 / UNION ARENA ブースターパック D.Gray-man【UA58BT】</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">群馬 (WEB抽選（応募ページは店の投稿・画像から）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">WEB抽選の当選者に限り販売（QRコードから申込）</span></div>
+          </div>
+          <a href="https://x.com/furu1_AMtakasak/status/2122854282378854905" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="ふるいちトップブックス横越バイパス店 ポケモンカードゲーム 拡張パック ハドウシーカ / ユニオンアリーナ ブースターパック ＜物語＞シリーズvol.2 / ユニオンアリーナ ブースターパック d.gray-ma 新潟 web web抽選（応募ページは店の投稿・画像から） 詳細は公式案内をご確認ください ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">ふるいちトップブックス横越バイパス店</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム 拡張パック ハドウシーカ / ユニオンアリーナ ブースターパック ＜物語＞シリーズVol.2 / ユニオンアリーナ ブースターパック D.Gray-ma</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">新潟 (WEB抽選（応募ページは店の投稿・画像から）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">詳細は公式案内をご確認ください</span></div>
+          </div>
+          <a href="https://x.com/furu1_yokogoshi/status/2122861193136419138" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online" data-status="open" data-text="ふるいち旭川宮前店 ポケモンカードゲーム mega 拡張パック ハドウシーカー / union arena ブースターパック 〈物語〉シリーズ vol.2【ex18bt】 / union arena ブースターパック d.gray-man【ua58bt】 北海道 web web抽選（応募ページは店の投稿・画像から） web抽選の当選者のみ販売。発売日2026年11月27日(金)。qrコードから申込 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">ふるいち旭川宮前店</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA 拡張パック ハドウシーカー / UNION ARENA ブースターパック 〈物語〉シリーズ Vol.2【EX18BT】 / UNION ARENA ブースターパック D.Gray-man【UA58BT】</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">北海道 (WEB抽選（応募ページは店の投稿・画像から）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">WEB抽選の当選者のみ販売。発売日2026年11月27日(金)。QRコードから申</span></div>
+          </div>
+          <a href="https://x.com/bigban_miyamae/status/2122862916030562431" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-22T23:00:00+09:00" data-region="online osaka" data-status="open" data-text="ふるいちイオンモールりんくう泉南店 ポケモンカードゲーム mega 拡張パック ハドウシーカー / union arena ブースターパック〈物語〉シリーズ vol.2【ex18bt】 / union arena ブースターパック d.gray-man【ua58bt】 大阪 web web抽選（応募ページは店の投稿・画像から） web抽選の当選者に限り販売。抽選ページは受付期間中のみ表示 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">ふるいちイオンモールりんくう泉南店</span>
+            </div>
+            <span class="status-badge status-open">11/22(日)23:00 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA 拡張パック ハドウシーカー / UNION ARENA ブースターパック〈物語〉シリーズ Vol.2【EX18BT】 / UNION ARENA ブースターパック D.Gray-man【UA58BT】</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">大阪 (WEB抽選（応募ページは店の投稿・画像から）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">WEB抽選の当選者に限り販売。抽選ページは受付期間中のみ表示</span></div>
+          </div>
+          <a href="https://x.com/furu1_AMrinkuu/status/2122864285907116144" target="_blank" rel="noopener noreferrer" class="apply-btn">
             🔗 公式案内・応募ページを開く
           </a>
         </article>
@@ -8368,10 +8655,10 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
-        <article class="lottery-card" data-category="other" data-deadline="2026-11-22T23:59:00+09:00" data-region="online" data-status="open" data-text="イオン九州 ドラゴンボールスーパーカードゲーム フュージョンワールド ブースターパック reach the god【fb12】 九州 アプリ アプリ抽選受付（当選者には店頭販売） 応募はiaeonアプリだけで受け付けます。九州にあるイオン直営店舗（沖縄を除く）をお気に入り店舗に登録してください。1人1ボックス（24パック）までで、1パック239円（税込）です。購入できるのは12/12(土)から12/16(水)までで、購入指定店舗の玩具コーナーが閉まる時間までです。 🃏 ドラゴンボール ドラゴンボール">
+        <article class="lottery-card" data-category="dragonball" data-deadline="2026-11-22T23:59:00+09:00" data-region="online" data-status="open" data-text="イオン九州 ドラゴンボールスーパーカードゲーム フュージョンワールド ブースターパック reach the god【fb12】 九州 アプリ アプリ抽選受付（当選者には店頭販売） 応募はiaeonアプリだけで受け付けます。九州にあるイオン直営店舗（沖縄を除く）をお気に入り店舗に登録してください。1人1ボックス（24パック）までで、1パック239円（税込）です。購入できるのは12/12(土)から12/16(水)までで、購入指定店舗の玩具コーナーが閉まる時間までです。 🐉 ドラゴンボール ドラゴンボール">
           <div class="card-top">
             <div class="shop-name-wrap">
-              <span class="cat-badge badge-other">🃏 ドラゴンボール</span>
+              <span class="cat-badge badge-dragonball">🐉 ドラゴンボール</span>
               <span class="shop-name">イオン九州</span>
             </div>
             <span class="status-badge status-open">11/22(日)23:59 締切</span>
@@ -9632,7 +9919,7 @@
       <div class="date-section" id="sec-11-23" data-date="11/23">
         <div class="date-header">
           <span class="date-title">締切：11月23日（月）</span>
-          <span class="date-count">43件</span>
+          <span class="date-count">46件</span>
         </div>
         
         <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-23T11:30:00+09:00" data-region="online tokyo" data-status="open" data-text="hobby one ホビーワン 30th celebration 9種セット(ランダム) 東京 web web抽選（応募ページは店の投稿・画像から） 大会・イベント参加者のみ（当日会場で抽選）。ポケカ交流会11/23参加費500円・定員24名・当選9名・会員登録後に会員ページで予約 ⚡ ポケカ ポケカ">
@@ -10409,6 +10696,60 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-23T23:59:00+09:00" data-region="other_region" data-status="open" data-text="萬屋盛岡店 ポケモンカードゲーム ハドウシーカー 岩手 x x で応募（フォロー＆リポスト等） 当アカウントをフォロー＋このポストをリポスト・当選dmに返信・お一人様一つ・店頭で本人受取・顔写真付き身分証 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">萬屋盛岡店</span>
+            </div>
+            <span class="status-badge status-open">11/23(月) 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム ハドウシーカー</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">岩手 (X で応募（フォロー＆リポスト等）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">X</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">当アカウントをフォロー＋このポストをリポスト・当選DMに返信・お一人様一つ・店頭</span></div>
+          </div>
+          <a href="https://x.com/yorozuya_card/status/2122854187151343669" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-23T23:59:00+09:00" data-region="aichi" data-status="open" data-text="cardbox松坂屋とれぱに店 拡張パック ハドウシーカー 愛知 店頭 店頭抽選 ご来店の上、レジ横の応募用qrコードから申し込み ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">CARDBOX松坂屋とれぱに店</span>
+            </div>
+            <span class="status-badge status-open">11/23(月) 締切</span>
+          </div>
+          <div class="product-title">拡張パック ハドウシーカー</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">愛知 (店頭抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">店頭</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">ご来店の上、レジ横の応募用QRコードから申し込み</span></div>
+          </div>
+          <a href="https://x.com/cardbox_torepa/status/2122865487134806404" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-23T23:59:00+09:00" data-region="aichi" data-status="open" data-text="cardbox松坂屋とれぱに店 ポケモンカード スターターセットex イーブイex / ゾロア＆ゾロアークex / ニャオハ＆マスカーニャex 愛知 店頭 店頭抽選 3種のうち1点まで応募可。レジ横の応募用qrコードから応募 ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">CARDBOX松坂屋とれぱに店</span>
+            </div>
+            <span class="status-badge status-open">11/23(月) 締切</span>
+          </div>
+          <div class="product-title">ポケモンカード スターターセットex イーブイex / ゾロア＆ゾロアークex / ニャオハ＆マスカーニャex</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">愛知 (店頭抽選)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">店頭</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">3種のうち1点まで応募可。レジ横の応募用QRコードから応募</span></div>
+          </div>
+          <a href="https://x.com/cardbox_torepa/status/2122869373622956360" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
       </div>
       <div class="date-section" id="sec-11-24" data-date="11/24">
         <div class="date-header">
@@ -10434,10 +10775,10 @@
             🔗 公式案内・応募ページを開く
           </a>
         </article>
-        <article class="lottery-card" data-category="other" data-deadline="2026-11-24T15:00:00+09:00" data-region="online" data-status="open" data-text="dmm通販 ドラゴンボールスーパーカードゲーム フュージョンワールド ブースターパック dual evolution【fb09】 全国 web web抽選受付（当選者にはオンライン販売） プレミアホビー商品の抽選販売で、販売単位はboxです。価格は税込5,280円です。メールが届くのは当選者だけで、11/26(木)から4日以内に順次送られます。購入できる期間は、当選メールを見て確認します。 🃏 ドラゴンボール ドラゴンボール">
+        <article class="lottery-card" data-category="dragonball" data-deadline="2026-11-24T15:00:00+09:00" data-region="online" data-status="open" data-text="dmm通販 ドラゴンボールスーパーカードゲーム フュージョンワールド ブースターパック dual evolution【fb09】 全国 web web抽選受付（当選者にはオンライン販売） プレミアホビー商品の抽選販売で、販売単位はboxです。価格は税込5,280円です。メールが届くのは当選者だけで、11/26(木)から4日以内に順次送られます。購入できる期間は、当選メールを見て確認します。 🐉 ドラゴンボール ドラゴンボール">
           <div class="card-top">
             <div class="shop-name-wrap">
-              <span class="cat-badge badge-other">🃏 ドラゴンボール</span>
+              <span class="cat-badge badge-dragonball">🐉 ドラゴンボール</span>
               <span class="shop-name">DMM通販</span>
             </div>
             <span class="status-badge status-open">11/24(火)15:00 締切</span>
@@ -11482,7 +11823,7 @@
       <div class="date-section" id="sec-11-25" data-date="11/25">
         <div class="date-header">
           <span class="date-title">締切：11月25日（水）</span>
-          <span class="date-count">20件</span>
+          <span class="date-count">21件</span>
         </div>
         
         <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-25T13:00:00+09:00" data-region="tokyo" data-status="open" data-text="カードコレクト秋葉原本店 ポケモンカードゲーム mega 30th celebration カードセット(9種セット) 東京 x x で応募（フォロー＆リポスト等） @cardcollect_と@cardcollect_kkrをフォロー＋リポスト＋いいね。1人1点まで。複数アカウント応募は対象外。受取は店頭または郵送(送料990円) ⚡ ポケカ ポケカ">
@@ -11842,6 +12183,24 @@
             <div><span class="info-label">条件:</span> <span class="info-val">当店Xフォロー・本ポストのリポスト・BOOKOFF会員アプリ登録(仮登録・当日登</span></div>
           </div>
           <a href="https://x.com/BOOKOFF_agro/status/2122590217857359916" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 公式案内・応募ページを開く
+          </a>
+        </article>
+        <article class="lottery-card" data-category="pokeka" data-deadline="2026-11-25T23:59:00+09:00" data-region="other_region" data-status="open" data-text="ブックオフプラス田富昭和通り ポケモンカードゲーム mega 拡張パック ハドウシーカー 山梨 x x で応募（フォロー＆リポスト等） @bo_tatomi_hobbyをフォロー＋該当ポストをリポスト。購入は店頭のみ・当選通知dm提示（1通知1box） ⚡ ポケカ ポケカ">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
+              <span class="shop-name">ブックオフプラス田富昭和通り</span>
+            </div>
+            <span class="status-badge status-open">11/25(水) 締切</span>
+          </div>
+          <div class="product-title">ポケモンカードゲーム MEGA 拡張パック ハドウシーカー</div>
+          <div class="info-grid">
+            <div><span class="info-label">地域:</span> <span class="info-val">山梨 (X で応募（フォロー＆リポスト等）)</span></div>
+            <div><span class="info-label">形式:</span> <span class="info-val">X</span></div>
+            <div><span class="info-label">条件:</span> <span class="info-val">@BO_TATOMI_HOBBYをフォロー＋該当ポストをリポスト。購入は店頭のみ</span></div>
+          </div>
+          <a href="https://x.com/BO_TATOMI_HOBBY/status/2122859574848082360" target="_blank" rel="noopener noreferrer" class="apply-btn">
             🔗 公式案内・応募ページを開く
           </a>
         </article>
@@ -12423,10 +12782,10 @@
           <span class="date-count">1件</span>
         </div>
         
-        <article class="lottery-card" data-category="other" data-deadline="2026-12-06T21:00:00+09:00" data-region="other_region" data-status="open" data-text="tsutaya白河店(みどり書房白河店) ドラゴンボールスーパーカードゲーム フュージョンワールド ブースター reach the god fb12 福島 店頭 店頭抽選 店頭掲示のqrコードから申込。小学生以上・1人1boxまで・本人確認書類必須・受付番号のスクリーンショット必要 🃏 ドラゴンボール ドラゴンボール">
+        <article class="lottery-card" data-category="dragonball" data-deadline="2026-12-06T21:00:00+09:00" data-region="other_region" data-status="open" data-text="tsutaya白河店(みどり書房白河店) ドラゴンボールスーパーカードゲーム フュージョンワールド ブースター reach the god fb12 福島 店頭 店頭抽選 店頭掲示のqrコードから申込。小学生以上・1人1boxまで・本人確認書類必須・受付番号のスクリーンショット必要 🐉 ドラゴンボール ドラゴンボール">
           <div class="card-top">
             <div class="shop-name-wrap">
-              <span class="cat-badge badge-other">🃏 ドラゴンボール</span>
+              <span class="cat-badge badge-dragonball">🐉 ドラゴンボール</span>
               <span class="shop-name">TSUTAYA白河店(みどり書房白河店)</span>
             </div>
             <span class="status-badge status-open">12/6(日)21:00 締切</span>
@@ -12588,7 +12947,7 @@
       <div class="date-section" id="sec-none" data-date="none">
         <div class="date-header">
           <span class="date-title">締切未定の案件</span>
-          <span class="date-count">69件</span>
+          <span class="date-count">68件</span>
         </div>
         
         <article class="lottery-card" data-category="pokeka" data-deadline="" data-region="online" data-status="open" data-text="amazon ポケモンカードゲーム mega 拡張パック ストームエメラルダ box 全国 web web（amazon の招待リクエスト） amazon から招待された人だけが購入できます（商品ページの「招待をリクエスト」から） ⚡ ポケカ ポケカ">
@@ -12768,24 +13127,6 @@
             <div><span class="info-label">条件:</span> <span class="info-val">Amazon から招待された人だけが購入できます（商品ページの「招待をリクエスト</span></div>
           </div>
           <a href="https://kaitorix.app/deal/B0G6J9VPN2?s=chusen&amp;jiei=1" target="_blank" rel="noopener noreferrer" class="apply-btn">
-            🔗 公式案内・応募ページを開く
-          </a>
-        </article>
-        <article class="lottery-card" data-category="pokeka" data-deadline="" data-region="online" data-status="open" data-text="amazon ポケモンカードゲーム mega 30th celebration カードセット フシギダネ・ヒトカゲ・ゼニガメ 全国 web web（amazon の招待リクエスト） amazon から招待された人だけが購入できます（商品ページの「招待をリクエスト」から） ⚡ ポケカ ポケカ">
-          <div class="card-top">
-            <div class="shop-name-wrap">
-              <span class="cat-badge badge-pokeka">⚡ ポケカ</span>
-              <span class="shop-name">Amazon</span>
-            </div>
-            <span class="status-badge status-open">締切未定</span>
-          </div>
-          <div class="product-title">ポケモンカードゲーム MEGA 30th CELEBRATION カードセット フシギダネ・ヒトカゲ・ゼニガメ</div>
-          <div class="info-grid">
-            <div><span class="info-label">地域:</span> <span class="info-val">全国 (WEB（Amazon の招待リクエスト）)</span></div>
-            <div><span class="info-label">形式:</span> <span class="info-val">WEB</span></div>
-            <div><span class="info-label">条件:</span> <span class="info-val">Amazon から招待された人だけが購入できます（商品ページの「招待をリクエスト</span></div>
-          </div>
-          <a href="https://kaitorix.app/deal/B0GXCYMRGL?s=chusen&amp;jiei=1" target="_blank" rel="noopener noreferrer" class="apply-btn">
             🔗 公式案内・応募ページを開く
           </a>
         </article>
@@ -13852,7 +14193,7 @@
 
   <!-- Interactive Filter Script & Auto Deadline Hider -->
   <script>
-    const TOTAL = 722;
+    const TOTAL = 740;
     const searchInput = document.getElementById('searchInput');
     const categoryTabs = document.querySelectorAll('#categoryTabs .cat-tab');
     const regionPills = document.querySelectorAll('#regionFilters .filter-pill');
