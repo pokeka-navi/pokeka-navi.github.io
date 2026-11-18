@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ポケカナビ | ポケカ・ワンピ・遊戯王・ドラゴンボール・TCG最新抽選応募リンク速報まとめ一覧</title>
-  <meta name="description" content="ポケモンカード・ワンピースカード・遊戯王OCG・ドラゴンボールフュージョンワールド・TCGの最新抽選販売・予約情報を完全網羅！LivePocket・公式・家電量販店・ショップの応募リンクを締切日順にリアルタイム掲載。">
+  <meta name="description" content="ポケモンカード・ワンピースカード・遊戯王OCG・ドラゴンボールフュージョンワールド・TCGの最新抽選販売・予約情報を完全網羅！LivePocket・公式・家電量販店・ショップの応募リンクを締切日順にリアルタイム掲載。Topps公式ストアの販売中・予約商品のピックアップも。">
   <meta name="keywords" content="ポケカ抽選,ワンピースカード予約,遊戯王抽選,ドラゴンボールカード抽選,フュージョンワールド,TCG抽選,ハドウシーカー,ポケカナビ,LivePocket">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="sVI1GOg4cQMqHlO1eDTc6qngZ6FfMN494CDo5JnYznw">
@@ -241,117 +241,7 @@
       flex: 0 0 auto;
     }
 
-    /* Topps公式ショップ・抽選リンク（常設・白カード1枚） */
-    .topps-box {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 14px 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-    }
-
-    .topps-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .topps-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: #0f172a;
-      min-width: 0;
-    }
-
-    .topps-note {
-      font-size: 10px;
-      color: #94a3b8;
-      white-space: nowrap;
-      flex: 0 0 auto;
-    }
-
-    /* スマホ390px: 3リンクを縦1列（文字切れなし） / 600px以上: 3列 */
-    .topps-links {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-    }
-
-    .topps-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      min-width: 0;
-      padding: 9px 12px;
-      border-radius: 10px;
-      background: #f8fafc;
-      border: 1px solid var(--card-border);
-      text-decoration: none;
-      color: inherit;
-      transition: background-color 0.2s, border-color 0.2s;
-    }
-
-    .topps-link:hover {
-      background: #eff6ff;
-      border-color: #bfdbfe;
-    }
-
-    .topps-link-main {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      min-width: 0;
-      flex-wrap: wrap;
-    }
-
-    .topps-link-name {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: #0f172a;
-      white-space: nowrap;
-    }
-
-    .topps-link-tag {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--accent-blue);
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 20px;
-      padding: 1px 7px;
-      white-space: nowrap;
-    }
-
-    .topps-link-arrow {
-      font-size: 12px;
-      font-weight: 800;
-      color: #94a3b8;
-      flex: 0 0 auto;
-    }
-
-    @media (min-width: 600px) {
-      .topps-links {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .topps-link {
-        flex-wrap: nowrap;
-      }
-
-      .topps-link-main {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 3px;
-      }
-    }
-
-    /* Genre / Category Tabs（スマホ390px: 「すべて」「その他」全幅＋間は2列で文字切れなし / 520px以上: 3列×2行） */
+    /* Genre / Category Tabs（スマホ390px: 「すべて」全幅＋残り6つを2列×3行 / 520px以上: 「すべて」全幅＋3列×2行） */
     .category-tabs {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -359,8 +249,7 @@
       margin-bottom: 16px;
     }
 
-    .cat-tab[data-cat="all"],
-    .cat-tab[data-cat="other"] {
+    .cat-tab[data-cat="all"] {
       grid-column: 1 / -1;
     }
 
@@ -426,15 +315,22 @@
       box-shadow: 0 2px 8px rgba(234, 88, 12, 0.28);
     }
 
-    /* 520px以上では6タブを3列×2行に整列（基本の .cat-tab 定義より後に置くこと） */
+    /* Topps（野球・スポーツカード）：爽やかなロイヤルブルー */
+    .cat-tab.cat-topps.active {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.28);
+    }
+
+    /* 520px以上では「すべて」全幅＋残り6タブを3列×2行に整列 */
     @media (min-width: 520px) {
       .category-tabs {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .cat-tab[data-cat="all"],
-      .cat-tab[data-cat="other"] {
-        grid-column: auto;
+      .cat-tab[data-cat="all"] {
+        grid-column: 1 / -1;
       }
 
       .cat-tab {
@@ -621,6 +517,21 @@
       border: 1px solid #fed7aa;
     }
 
+    .badge-topps {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    /* Toppsセクション：青系の見出し */
+    .topps-section .date-header {
+      border-bottom-color: #bae6fd;
+    }
+
+    .topps-section .date-title {
+      color: #0369a1;
+    }
+
     .shop-name {
       font-size: 14px;
       font-weight: 800;
@@ -645,6 +556,20 @@
       background: #eff6ff;
       color: var(--accent-blue);
       border: 1px solid #bfdbfe;
+    }
+
+    /* 期間限定販売（Topps NOW等） */
+    .status-limited {
+      background: #fef9c3;
+      color: #a16207;
+      border: 1px solid #fde68a;
+    }
+
+    /* 発売予定・予約開始 */
+    .status-preorder {
+      background: #f0f9ff;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
     }
 
     .product-title {
@@ -724,7 +649,7 @@
     <section class="hero">
       <span class="hero-badge">2026年最新 · 毎週水曜・日曜更新</span>
       <h1 class="hero-title">トレカ抽選応募リンク速報</h1>
-      <p class="hero-desc">ポケカ・ワンピース・遊戯王・ドラゴンボール・TCGの全国抽選受付リンクを締切順に一括整理</p>
+      <p class="hero-desc">ポケカ・ワンピース・遊戯王・ドラゴンボール・TCGの全国抽選受付リンクを締切順に一括整理（Topps公式の販売中商品も掲載）</p>
     </section>
 
     <!-- Genre Category Tabs -->
@@ -734,6 +659,7 @@
       <button class="cat-tab cat-onepiece" data-cat="onepiece">🏴‍☠️ ワンピースカード</button>
       <button class="cat-tab cat-yugioh" data-cat="yugioh">⚔️ 遊戯王</button>
       <button class="cat-tab cat-dragonball" data-cat="dragonball">🐉 ドラゴンボール</button>
+      <button class="cat-tab cat-topps" data-cat="topps">⚾ Topps</button>
       <button class="cat-tab cat-other" data-cat="other">🃏 その他TCG</button>
     </div>
 
@@ -782,37 +708,6 @@
       </div>
     </section>
 
-    <!-- Topps公式ショップ・抽選リンク（常設） -->
-    <section class="topps-box">
-      <div class="topps-header">
-        <div class="topps-title">⚾ Topps公式ショップ・抽選リンク</div>
-        <span class="topps-note">スポーツカード</span>
-      </div>
-      <div class="topps-links">
-        <a class="topps-link" href="https://jp.topps.com/" target="_blank" rel="noopener noreferrer">
-          <span class="topps-link-main">
-            <span class="topps-link-name">Topps Japan</span>
-            <span class="topps-link-tag">先行予約・直販</span>
-          </span>
-          <span class="topps-link-arrow">↗</span>
-        </a>
-        <a class="topps-link" href="https://store.shopping.yahoo.co.jp/toppsjapan/" target="_blank" rel="noopener noreferrer">
-          <span class="topps-link-main">
-            <span class="topps-link-name">Topps ヤフー公式</span>
-            <span class="topps-link-tag">在庫・ポイント</span>
-          </span>
-          <span class="topps-link-arrow">↗</span>
-        </a>
-        <a class="topps-link" href="https://www.topps.com/" target="_blank" rel="noopener noreferrer">
-          <span class="topps-link-main">
-            <span class="topps-link-name">Topps US</span>
-            <span class="topps-link-tag">US版・EQL抽選</span>
-          </span>
-          <span class="topps-link-arrow">↗</span>
-        </a>
-      </div>
-    </section>
-
     <!-- Filters -->
     <section class="filter-section">
       <input type="text" id="searchInput" class="search-box" placeholder="🔍 店舗名・商品名で絞り込み">
@@ -831,7 +726,7 @@
 
     <!-- 掲載件数 -->
     <div class="list-meta">
-      <span id="listMeta">表示中 749件</span>
+      <span id="listMeta">表示中 762件</span>
       <span class="list-note">受付中の全案件を締切順に掲載</span>
     </div>
 
@@ -841,6 +736,248 @@
 
     <!-- List of Lotteries -->
     <div id="lotteryList">
+      
+      <div class="date-section topps-section" id="sec-topps" data-date="topps">
+        <div class="date-header">
+          <span class="date-title">⚾ Topps公式 ピックアップ（販売中・予約情報）</span>
+          <span class="date-count">13件</span>
+        </div>
+        
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps npb stadium club baseball（box） ¥15,840 在庫あり npb・box 公式通販でカート投入可">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps NPB Stadium Club Baseball（BOX）</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥15,840</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NPB・BOX</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">公式通販でカート投入可</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-npb-stadium-club-baseball" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps npb baseball card（box） ¥13,200 在庫あり npb・box 公式通販でカート投入可">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 TOPPS NPB Baseball Card（BOX）</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥13,200</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NPB・BOX</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">公式通販でカート投入可</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-npb-baseball-card" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps npb finest 1 pack ¥660 在庫あり npb・1パック boxは売り切れ・1パックのみ在庫">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps NPB Finest 1 Pack</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥660</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NPB・1パック</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">BOXは売り切れ・1パックのみ在庫</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-npb-finest-1-pack" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps npb stadium club baseball 1 pack ¥660 在庫あり npb・1パック お試し1パック">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps NPB Stadium Club Baseball 1 PACK</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥660</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NPB・1パック</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">お試し1パック</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-npb-stadium-club-baseball-1-pack" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps npb baseball card 1 pack ¥660 在庫あり npb・1パック お試し1パック">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps NPB Baseball Card 1 Pack</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥660</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NPB・1パック</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">お試し1パック</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-npb-baseball-card-1-pack" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps series 2 baseball - japan edition（box） ¥15,400 在庫あり mlb日本版・box 12枚入り・日本版シリーズ2">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps Series 2 Baseball - Japan Edition（BOX）</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥15,400</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">MLB日本版・BOX</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">12枚入り・日本版シリーズ2</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-series-2-baseball-japan-edition" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps series 2 baseball - japan edition 7パックセット ¥5,390 在庫あり mlb日本版・送料無料 7パックセット・送料無料">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps Series 2 Baseball - Japan Edition 7パックセット</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥5,390</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">MLB日本版・送料無料</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">7パックセット・送料無料</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-series-2-baseball-japan-edition-7-pack-set" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026-27 topps flagship basketball - mega box ¥11,000 在庫あり nba・メガbox 直筆サイン＆レリック入りの可能性">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026-27 Topps Flagship Basketball - Mega Box</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥11,000</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NBA・メガBOX</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">直筆サイン＆レリック入りの可能性</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-27-topps-flagship-basketball-mega-box" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps heritage football - mega box ¥8,800 在庫あり nfl・メガbox メガ限定sparkleパラレル">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-open">在庫あり</span>
+          </div>
+          <div class="product-title">2026 Topps Heritage Football - Mega Box</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥8,800</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">NFL・メガBOX</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">メガ限定Sparkleパラレル</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/2026-topps-heritage-football-mega-box" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="2026-11-24T23:59:00+09:00" data-region="online" data-status="open" data-text="topps トップス cristiano ronaldo - 2026 portugal topps now final farewell pack ¥3,850 11/24まで販売 サッカー・期間限定 1/1直筆サイン4枚を検索">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-limited">11/24まで販売</span>
+          </div>
+          <div class="product-title">Cristiano Ronaldo - 2026 Portugal Topps NOW Final Farewell Pack</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥3,850</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">サッカー・期間限定</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">1/1直筆サイン4枚を検索</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/cristiano-ronaldo-2026-portugal-topps-now-r-final-farewell-pack" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="2026-11-20T23:59:00+09:00" data-region="online" data-status="open" data-text="topps トップス shusaku nishikawa - 2026-27 j.league topps now card 31 ¥1,980 11/20まで販売 jリーグ・期間限定 直筆サインを検索">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-limited">11/20まで販売</span>
+          </div>
+          <div class="product-title">Shusaku Nishikawa - 2026-27 J.League Topps NOW Card 31</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">¥1,980</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">Jリーグ・期間限定</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">直筆サインを検索</span></div>
+          </div>
+          <a href="https://jp.topps.com/products/shusaku-nishikawa-2026-27-j-league-r-topps-now-r-card-31" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス topps merlin uefa club competitions 2025/26 未定 11/19 予約開始 uefa・予約販売 11月19日15:00 jstに予約開始予定">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-preorder">11/19 予約開始</span>
+          </div>
+          <div class="product-title">Topps Merlin UEFA Club Competitions 2025/26</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">未定</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">UEFA・予約販売</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">11月19日15:00 JSTに予約開始予定</span></div>
+          </div>
+          <a href="https://jp.topps.com/pages/topps-ucc-merlin" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+        <article class="lottery-card" data-category="topps" data-deadline="" data-region="online" data-status="open" data-text="topps トップス 2026 topps gilded collection baseball 未定 11/25 発売 mlb・発売予定 ゴールド系プレミアム・1/1の24kカード新登場">
+          <div class="card-top">
+            <div class="shop-name-wrap">
+              <span class="cat-badge badge-topps">⚾ Topps</span>
+              <span class="shop-name">Topps公式ストア</span>
+            </div>
+            <span class="status-badge status-preorder">11/25 発売</span>
+          </div>
+          <div class="product-title">2026 Topps Gilded Collection Baseball</div>
+          <div class="info-grid">
+            <div><span class="info-label">価格:</span> <span class="info-val">未定</span></div>
+            <div><span class="info-label">種類:</span> <span class="info-val">MLB・発売予定</span></div>
+            <div><span class="info-label">情報:</span> <span class="info-val">ゴールド系プレミアム・1/1の24Kカード新登場</span></div>
+          </div>
+          <a href="https://jp.topps.com/pages/topps-gilded-collection-baseball" target="_blank" rel="noopener noreferrer" class="apply-btn">
+            🔗 Topps公式で見る・購入する
+          </a>
+        </article>
+      </div>
       
       <div class="date-section" id="sec-11-18" data-date="11/18">
         <div class="date-header">
@@ -14496,7 +14633,7 @@
 
   <!-- Interactive Filter Script & Auto Deadline Hider -->
   <script>
-    const TOTAL = 749;
+    const TOTAL = 762;
     const searchInput = document.getElementById('searchInput');
     const categoryTabs = document.querySelectorAll('#categoryTabs .cat-tab');
     const regionPills = document.querySelectorAll('#regionFilters .filter-pill');
